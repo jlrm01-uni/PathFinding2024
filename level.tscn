@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://007uaex44f5h"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_apstg"]
+[ext_resource type="Texture2D" uid="uid://gum1xylr703j" path="res://wall.png" id="1_tjwf0"]
+[ext_resource type="PackedScene" uid="uid://c4e4dy5v1wasc" path="res://ship.tscn" id="3_8ujga"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2spo"]
+texture = ExtResource("1_tjwf0")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+
+[sub_resource type="TileSet" id="TileSet_vpeea"]
+tile_size = Vector2i(18, 18)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_f2spo")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_c61bu"]
+vertices = PackedVector2Array(199, 626, 16, 626, 21, 25, 199, 23)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(12, 16, 210, 13, 209, 637, 6, 636)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3nalx"]
+vertices = PackedVector2Array(1124, 120, 208, 126, 208, 36, 1125, 22)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(198, 27, 1136, 12, 1134, 130, 198, 137)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nqa3y"]
+vertices = PackedVector2Array(1131, 628, 889, 628, 889, 138, 1131, 136)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(880, 129, 1142, 126, 1141, 639, 879, 638)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2bapa"]
+vertices = PackedVector2Array(878, 433, 877, 618, 216, 613, 211, 431)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(201, 421, 889, 424, 887, 629, 207, 623)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8eein"]
+vertices = PackedVector2Array(699, 424, 393, 422, 386, 128, 700, 124)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(376, 119, 711, 114, 709, 435, 384, 432)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="level" type="Node2D" groups=["Level"]]
+script = ExtResource("1_apstg")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_vpeea")
+format = 2
+layer_0/tile_data = PackedInt32Array(524300, 0, 0, 589836, 0, 0, 655372, 0, 0, 720908, 0, 0, 786444, 0, 0, 851980, 0, 0, 917516, 0, 0, 983052, 0, 0, 1048588, 0, 0, 1114124, 0, 0, 1179660, 0, 0, 1245196, 0, 0, 1310732, 0, 0, 1376268, 0, 0, 1441804, 0, 0, 524301, 0, 0, 589837, 0, 0, 655373, 0, 0, 720909, 0, 0, 786445, 0, 0, 851981, 0, 0, 917517, 0, 0, 983053, 0, 0, 1048589, 0, 0, 1114125, 0, 0, 1179661, 0, 0, 1245197, 0, 0, 1310733, 0, 0, 1376269, 0, 0, 1441805, 0, 0, 524302, 0, 0, 589838, 0, 0, 655374, 0, 0, 720910, 0, 0, 786446, 0, 0, 851982, 0, 0, 917518, 0, 0, 983054, 0, 0, 1048590, 0, 0, 1114126, 0, 0, 1179662, 0, 0, 1245198, 0, 0, 1310734, 0, 0, 1376270, 0, 0, 1441806, 0, 0, 524303, 0, 0, 589839, 0, 0, 655375, 0, 0, 720911, 0, 0, 786447, 0, 0, 851983, 0, 0, 917519, 0, 0, 983055, 0, 0, 1048591, 0, 0, 1114127, 0, 0, 1179663, 0, 0, 1245199, 0, 0, 1310735, 0, 0, 1376271, 0, 0, 1441807, 0, 0, 524304, 0, 0, 589840, 0, 0, 655376, 0, 0, 720912, 0, 0, 786448, 0, 0, 851984, 0, 0, 917520, 0, 0, 983056, 0, 0, 1048592, 0, 0, 1114128, 0, 0, 1179664, 0, 0, 1245200, 0, 0, 1310736, 0, 0, 1376272, 0, 0, 1441808, 0, 0, 524305, 0, 0, 589841, 0, 0, 655377, 0, 0, 720913, 0, 0, 786449, 0, 0, 851985, 0, 0, 917521, 0, 0, 983057, 0, 0, 1048593, 0, 0, 1114129, 0, 0, 1179665, 0, 0, 1245201, 0, 0, 1310737, 0, 0, 1376273, 0, 0, 1441809, 0, 0, 524306, 0, 0, 589842, 0, 0, 655378, 0, 0, 720914, 0, 0, 786450, 0, 0, 851986, 0, 0, 917522, 0, 0, 983058, 0, 0, 1048594, 0, 0, 1114130, 0, 0, 1179666, 0, 0, 1245202, 0, 0, 1310738, 0, 0, 1376274, 0, 0, 1441810, 0, 0, 524307, 0, 0, 589843, 0, 0, 655379, 0, 0, 720915, 0, 0, 786451, 0, 0, 851987, 0, 0, 917523, 0, 0, 983059, 0, 0, 1048595, 0, 0, 1114131, 0, 0, 1179667, 0, 0, 1245203, 0, 0, 1310739, 0, 0, 1376275, 0, 0, 1441811, 0, 0, 524308, 0, 0, 589844, 0, 0, 655380, 0, 0, 720916, 0, 0, 786452, 0, 0, 851988, 0, 0, 917524, 0, 0, 983060, 0, 0, 1048596, 0, 0, 1114132, 0, 0, 1179668, 0, 0, 1245204, 0, 0, 1310740, 0, 0, 1376276, 0, 0, 1441812, 0, 0, 524328, 0, 0, 589864, 0, 0, 655400, 0, 0, 720936, 0, 0, 786472, 0, 0, 852008, 0, 0, 917544, 0, 0, 983080, 0, 0, 1048616, 0, 0, 1114152, 0, 0, 1179688, 0, 0, 1245224, 0, 0, 1310760, 0, 0, 1376296, 0, 0, 1441832, 0, 0, 524329, 0, 0, 589865, 0, 0, 655401, 0, 0, 720937, 0, 0, 786473, 0, 0, 852009, 0, 0, 917545, 0, 0, 983081, 0, 0, 1048617, 0, 0, 1114153, 0, 0, 1179689, 0, 0, 1245225, 0, 0, 1310761, 0, 0, 1376297, 0, 0, 1441833, 0, 0, 524330, 0, 0, 589866, 0, 0, 655402, 0, 0, 720938, 0, 0, 786474, 0, 0, 852010, 0, 0, 917546, 0, 0, 983082, 0, 0, 1048618, 0, 0, 1114154, 0, 0, 1179690, 0, 0, 1245226, 0, 0, 1310762, 0, 0, 1376298, 0, 0, 1441834, 0, 0, 524331, 0, 0, 589867, 0, 0, 655403, 0, 0, 720939, 0, 0, 786475, 0, 0, 852011, 0, 0, 917547, 0, 0, 983083, 0, 0, 1048619, 0, 0, 1114155, 0, 0, 1179691, 0, 0, 1245227, 0, 0, 1310763, 0, 0, 1376299, 0, 0, 1441835, 0, 0, 524332, 0, 0, 589868, 0, 0, 655404, 0, 0, 720940, 0, 0, 786476, 0, 0, 852012, 0, 0, 917548, 0, 0, 983084, 0, 0, 1048620, 0, 0, 1114156, 0, 0, 1179692, 0, 0, 1245228, 0, 0, 1310764, 0, 0, 1376300, 0, 0, 1441836, 0, 0, 524333, 0, 0, 589869, 0, 0, 655405, 0, 0, 720941, 0, 0, 786477, 0, 0, 852013, 0, 0, 917549, 0, 0, 983085, 0, 0, 1048621, 0, 0, 1114157, 0, 0, 1179693, 0, 0, 1245229, 0, 0, 1310765, 0, 0, 1376301, 0, 0, 1441837, 0, 0, 524334, 0, 0, 589870, 0, 0, 655406, 0, 0, 720942, 0, 0, 786478, 0, 0, 852014, 0, 0, 917550, 0, 0, 983086, 0, 0, 1048622, 0, 0, 1114158, 0, 0, 1179694, 0, 0, 1245230, 0, 0, 1310766, 0, 0, 1376302, 0, 0, 1441838, 0, 0, 524335, 0, 0, 589871, 0, 0, 655407, 0, 0, 720943, 0, 0, 786479, 0, 0, 852015, 0, 0, 917551, 0, 0, 983087, 0, 0, 1048623, 0, 0, 1114159, 0, 0, 1179695, 0, 0, 1245231, 0, 0, 1310767, 0, 0, 1376303, 0, 0, 1441839, 0, 0, 524336, 0, 0, 589872, 0, 0, 655408, 0, 0, 720944, 0, 0, 786480, 0, 0, 852016, 0, 0, 917552, 0, 0, 983088, 0, 0, 1048624, 0, 0, 1114160, 0, 0, 1179696, 0, 0, 1245232, 0, 0, 1310768, 0, 0, 1376304, 0, 0, 1441840, 0, 0)
+
+[node name="Ship" parent="." instance=ExtResource("3_8ujga")]
+position = Vector2(492, 548)
+
+[node name="NavigationElements" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="NavigationElements"]
+navigation_polygon = SubResource("NavigationPolygon_c61bu")
+
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="NavigationElements"]
+navigation_polygon = SubResource("NavigationPolygon_3nalx")
+
+[node name="NavigationRegion2D3" type="NavigationRegion2D" parent="NavigationElements"]
+navigation_polygon = SubResource("NavigationPolygon_nqa3y")
+
+[node name="NavigationRegion2D4" type="NavigationRegion2D" parent="NavigationElements"]
+navigation_polygon = SubResource("NavigationPolygon_2bapa")
+
+[node name="NavigationRegion2D5" type="NavigationRegion2D" parent="NavigationElements"]
+position = Vector2(6, 1)
+navigation_polygon = SubResource("NavigationPolygon_8eein")

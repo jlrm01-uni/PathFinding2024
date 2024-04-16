@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4e4dy5v1wasc"]
+
+[ext_resource type="Script" path="res://ship.gd" id="1_4rkja"]
+[ext_resource type="Texture2D" uid="uid://beqhqjmlmm25n" path="res://ship_A.png" id="1_twjll"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2c1fu"]
+radius = 16.0312
+
+[node name="Ship" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_4rkja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2c1fu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_twjll")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_Ship_input_event"]
